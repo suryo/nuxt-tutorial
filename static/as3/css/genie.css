@@ -1,0 +1,432 @@
+BODY {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: 000000;
+    background-color: #FFFFFF;
+}
+
+select option {
+    width: 100%;
+    /* white-space: normal; */
+}
+
+.hideonscreen {
+    display: none;
+}
+
+.smalltext {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.smalltextred {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: normal;
+    text-transform: none;
+    color: FF0000;
+}
+
+.bcopy {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-weight: normal;
+    text-transform: none;
+    color: 000000;
+}
+
+.bcopybold {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    text-transform: none;
+    color: 000000;
+}
+
+.mapsboldunderline {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    text-transform: none;
+    text-decoration: underline;
+    color: 000000;
+}
+
+.bcopyerror {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    text-transform: none;
+    color: FF0000;
+}
+
+.boldcategories {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: none;
+    color: 000000;
+}
+
+.boldcategoriesred {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: none;
+    color: red;
+}
+
+.bcopyforms {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #4E4E3A
+}
+
+.bcopyformscart {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: 000000
+}
+
+.bcopyformsred {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: FF0000
+}
+
+.bcopyfooter {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: none;
+    color: 000000;
+}
+
+.bcopyfooterred {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: none;
+    color: red;
+}
+
+.bcopyfooterbold {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: none;
+    color: 000000;
+}
+
+.bcopyfooterboldred {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: none;
+    color: red;
+}
+
+.bigheader {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: 4E4E3A;
+}
+
+.bottomnav {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: normal;
+    color: 000000;
+}
+
+.calendar {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: none;
+    color: 999999;
+}
+
+.calendaru {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: normal;
+    text-transform: none;
+    text-decoration: underline;
+    color: 999999;
+}
+
+.calendarbold {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: bold;
+    text-transform: none;
+    text-decoration: none;
+    color: 000000;
+}
+
+.calendarunderl {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: bold;
+    text-transform: none;
+    text-decoration: underline;
+    color: 000000;
+}
+
+.caption {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    color: 666666;
+    text-decoration: none;
+}
+
+.category {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: none;
+    color: 000000;
+}
+
+.directoryletter {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: 666666;
+}
+
+.littlelink {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: 666666;
+}
+
+.link {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.llink {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    text-transform: none;
+    text-decoration: none;
+    color: FFFFFF;
+}
+
+.llinksmall {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: bold;
+    text-transform: none;
+    text-decoration: none;
+    color: FFFFFF;
+}
+
+.llinkgray {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    text-transform: none;
+    text-decoration: none;
+    color: #6C6C74;
+}
+
+.products {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: normal;
+    text-transform: none;
+    color: 000000;
+}
+
+.productsmall {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: normal;
+    text-transform: none;
+    color: 990000;
+}
+
+.productsubcategories {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: normal;
+    color: 000000;
+}
+
+.producttitle {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: 000000;
+}
+
+.rightlink {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: normal;
+    color: 000000;
+}
+
+.sitetitle {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: 00127B;
+}
+
+.sitesubtitle {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: 00127B;
+}
+
+.subhead {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: 696955;
+}
+
+.Bold {
+    font-weight: bold;
+}
+
+.Title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #cc3300;
+}
+
+.Code {
+    border: #8b4513 1px solid;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: #000066;
+    font-family: 'Courier New', Monospace;
+    background-color: #ff9933;
+}
+
+.redfooterbold {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: none;
+    color: #c60909;
+}
+
+.category_Arial {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: none;
+    color: 000000;
+}
+
+.bcopy_Arial {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: none;
+    color: 000000;
+}
+
+.bcopybold_Arial {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: none;
+    color: 000000;
+}
+
+.bcopyforms_Arial {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #000000
+}
+
+.fixed_width {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: none;
+    color: 000000;
+}
+
+.fixed_width_red {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: none;
+    color: red;
+}
+
+.max-width-120 {
+    max-width: 120;
+}
+
+
+/* https://bugzilla.dwebsite.com/show_bug.cgi?id=85472 */
+
+#so-building {
+    max-width: 420px;
+}
+
+#swich-user,
+.extra-medium-width {
+    max-width: 400px;
+}
+
+#swich-user,
+.extra-max-width {
+    max-width: 450px;
+}
+
+.medium-width {
+    min-width: 400px;
+}
+
+.abbr {
+    color: blue;
+    border-bottom: blue;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #eeeefe;
+    border: 1px solid #aaaaca;
+    font-size: smaller;
+    padding: 4px;
+    width: 160px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
