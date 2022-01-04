@@ -36,8 +36,14 @@ export default {
     '@nuxtjs/tailwindcss',
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  axios: {
+    baseURL: 'http://127.0.0.1:8000'
+  },
+  /*
+  ** Nuxt.js modules
+  */
   modules: [
+    "@nuxtjs/axios", 
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
