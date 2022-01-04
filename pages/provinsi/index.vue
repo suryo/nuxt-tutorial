@@ -5,8 +5,9 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h4>Propinsi</h4><a href="/provinsi/add/" class="btn btn-primary">add</a>
-              
+              <h4>Propinsi</h4>
+              <a href="/provinsi/add/" class="btn btn-primary">add</a>
+
               <div class="card-header-form">
                 <form>
                   <div class="input-group">
@@ -33,10 +34,26 @@
                   <tr v-for="(post, i) in posts" :key="i">
                     <td>{{ posts[i].id }}</td>
                     <td>{{ posts[i].provinsi }}</td>
-                    
-                     <td><a href="#" class="btn btn-secondary">Detail</a></td>
+
+                    <td>
+                      <div class="buttons">
+                        <nuxt-link
+                          class="btn btn-info"
+                          :to="`provinsi/edit/${posts[i].id}`"
+                          >EDIT</nuxt-link
+                        >
+
+                        <button
+                          type="button"
+                          class="btn btn-danger"
+                          size="sm"
+                          @click="deleteProvinsi(posts[i], i)"
+                        >
+                          DELETE
+                        </button>
+                      </div>
+                    </td>
                   </tr>
-                
                 </table>
               </div>
             </div>
@@ -76,14 +93,8 @@ export default {
       ],
       posts: [],
       sales: [
-        [
-          { Year: 2018,},
-          { Year: 2018,},
-        ],
-        [
-          { Year: 2017,},
-          { Year: 2017,},
-        ],
+        [{ Year: 2018 }, { Year: 2018 }],
+        [{ Year: 2017 }, { Year: 2017 }],
       ],
     };
   },
@@ -103,7 +114,16 @@ export default {
       });
   },
 
-  methods: {},
+  methods: {
+    async deleteProvinsi(posts, i) {
+      //delete data post by ID
+      console.log(i);
+      await this.$axios.delete(`api/provinsi/${posts.id}`).then(() => {
+        //   //remove item array by index
+        this.posts.splice(i, 1);
+      });
+    },
+  },
 };
 </script>
 
