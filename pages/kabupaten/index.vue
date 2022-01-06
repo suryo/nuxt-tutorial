@@ -5,8 +5,9 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h4>Propinsi</h4><a href="/provinsi/add/" class="btn btn-primary">add</a>
-              
+              <h4>Kabupaten</h4>
+              <a href="/kabupaten/add/" class="btn btn-primary">add</a>
+
               <div class="card-header-form">
                 <form>
                   <div class="input-group">
@@ -28,15 +29,33 @@
                   <tr>
                     <th>Id</th>
                     <th>Provinsi</th>
+                    <th>Kabupaten</th>
                     <th>Action</th>
                   </tr>
                   <tr v-for="(post, i) in posts" :key="i">
                     <td>{{ posts[i].id }}</td>
                     <td>{{ posts[i].provinsi }}</td>
-                    
-                     <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                    <td>{{ posts[i].kabupaten }}</td>
+
+                    <td>
+                      <div class="buttons">
+                        <nuxt-link
+                          class="btn btn-info"
+                          :to="`/kabupaten/edit/${posts[i].id}`"
+                          >EDIT</nuxt-link
+                        >
+
+                        <button
+                          type="button"
+                          class="btn btn-danger"
+                          size="sm"
+                          @click="deleteKabupaten(posts[i], i)"
+                        >
+                          DELETE
+                        </button>
+                      </div>
+                    </td>
                   </tr>
-                
                 </table>
               </div>
             </div>
@@ -76,14 +95,8 @@ export default {
       ],
       posts: [],
       sales: [
-        [
-          { Year: 2018,},
-          { Year: 2018,},
-        ],
-        [
-          { Year: 2017,},
-          { Year: 2017,},
-        ],
+        [{ Year: 2018 }, { Year: 2018 }],
+        [{ Year: 2017 }, { Year: 2017 }],
       ],
     };
   },
@@ -92,7 +105,7 @@ export default {
     console.log("test");
     //fething ke Rest API
     this.$axios
-      .get("/api/provinsi")
+      .get("/api/kabupaten")
       .then((response) => {
         //assign response ke state "posts"
         this.posts = response.data.data;
@@ -103,7 +116,16 @@ export default {
       });
   },
 
-  methods: {},
+  methods: {
+    async deleteProvinsi(posts, i) {
+      //delete data post by ID
+      console.log(i);
+      await this.$axios.delete(`api/provinsi/${posts.id}`).then(() => {
+        //   //remove item array by index
+        this.posts.splice(i, 1);
+      });
+    },
+  },
 };
 </script>
 

@@ -5,7 +5,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h4>Propinsi</h4>
+              <h4>Provinsi</h4>
               <a href="/provinsi/add/" class="btn btn-primary">add</a>
 
               <div class="card-header-form">
@@ -39,7 +39,7 @@
                       <div class="buttons">
                         <nuxt-link
                           class="btn btn-info"
-                          :to="`provinsi/edit/${posts[i].id}`"
+                          :to="`/provinsi/edit/${posts[i].id}`"
                           >EDIT</nuxt-link
                         >
 

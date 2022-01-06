@@ -61,6 +61,11 @@
             ><i class="far fa-square"></i> <span>desa</span></nuxt-link
           >
         </li>
+                <li>
+          <nuxt-link class="nav-link" to="/desa/"
+            ><i class="far fa-square"></i> <span>ainur</span></nuxt-link
+          >
+        </li>
         <li>
           <nuxt-link class="nav-link has-icon text-danger" to="/logout"
             ><i class="fas fa-sign-out-alt"></i> <span>Logout</span></nuxt-link
