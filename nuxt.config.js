@@ -43,7 +43,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    "@nuxtjs/axios", 
+    "@nuxtjs/axios",
+    'nuxt-vue-select', 
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

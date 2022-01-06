@@ -15,19 +15,27 @@
                 class="needs-validation"
                 novalidate=""
               >
-              <div class="form-group">
-                      <label>Provinsi</label>
-                      <select class="form-control">
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
-                      </select>
-                    </div>
+                <div class="form-group">
+                  <label>Provinsi</label>
+                  <select class="form-control">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                </div>
                 <div class="form-group">
                   <label>Kabupaten</label>
-                  <input type="text" v-model="provinsi.provinsi" class="form-control" />
+                  <input
+                    type="text"
+                    v-model="provinsi.provinsi"
+                    class="form-control"
+                  />
                 </div>
-
+                <div class="form-group">
+                  <v-select
+                    :options="[{ label: 'Canada', code: 'ca' }]"
+                  ></v-select>
+                </div>
                 <div class="form-group">
                   <label
                     class="
