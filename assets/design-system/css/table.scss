@@ -1,0 +1,72 @@
+/* table */
+
+.as-table-content {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.table-as {
+  margin-bottom: 0;
+  color: #333333;
+}
+.table-as thead th {
+  background-color: #005a86;
+  color: #ffffff;
+  border: none;
+}
+.table-as.table-as-center {
+  text-align: center;
+}
+.table-as thead th {
+  border-bottom: 1px solid #e8e8e8;
+  border-top: none;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: 600;
+}
+.table-as tbody tr:hover {
+  background-color: #f9f9f9;
+}
+.table-as tbody tr:first-child td {
+  border-top: none;
+}
+.table-as tbody {
+  font-size: 12px;
+}
+.table-as .th-w80 {
+  min-width: 80px;
+  width: 80px;
+}
+.table-as .th-w130 {
+  min-width: 130px;
+  width: 130px;
+}
+.table-as .th-w175 {
+  min-width: 175px;
+}
+.table-as .th-w200 {
+  min-width: 200px;
+}
+.table-as .th-w250 {
+  min-width: 250px;
+}
+.table-as .th-w300 {
+  min-width: 300px;
+}
+.table-as-eligibility thead th {
+  border: 1px solid #e8e8e8;
+}
+.table-as-eligibility thead tr:first-child th {
+  border-top: none;
+}
+.table-as-eligibility thead tr:first-child th:first-child {
+  border-left: none;
+}
+.table-as-eligibility thead tr:first-child th:last-child,
+.table-as-eligibility thead tr:nth-child(2) th:last-child {
+  border-right: none;
+}
+.table-as-eligibility tbody td {
+  vertical-align: middle;
+}

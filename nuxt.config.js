@@ -9,18 +9,26 @@ export default {
       lang: 'en'
     },
     meta: [
-      { charset: 'utf-8' },
+      {
+        charset: 'utf-8'
+      },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "~assets/css/tailwind.css",
+    "@fortawesome/fontawesome-svg-core/styles.css"
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -33,7 +41,19 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+    "bootstrap-vue/nuxt",
+    "@nuxtjs/tailwindcss",
+    ['@nuxtjs/fontawesome', {
+      component: 'fa',
+      suffix: true,
+      icons: {
+        solid: true,
+        regular: true,
+        brands: true
+      }
+    }],
+    "@nuxtjs/composition-api/module",
+    ["@nuxtjs/eslint-module", { fix: true }]
   ],
 
   axios: {
@@ -44,7 +64,7 @@ export default {
   */
   modules: [
     "@nuxtjs/axios",
-    'nuxt-vue-select', 
+    'nuxt-vue-select',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
