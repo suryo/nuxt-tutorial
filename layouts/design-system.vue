@@ -110,7 +110,7 @@ body {
 }
 
 .navbar {
-  background: #125789 !important;
+  background: #954890 !important;
 
   .nav-link {
     padding: 10px 15px;

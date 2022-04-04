@@ -2,7 +2,7 @@
   <div class="main-sidebar">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
-        <nuxt-link to="/dashboard">Nuxt-Tutorial</nuxt-link>
+        <nuxt-link to="/dashboard">Nuxt-Tutorial {{this.login.username}} [{{this.login.id}}]</nuxt-link>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
         <a href="index.html">DASHBOARD</a>
@@ -75,3 +75,34 @@
     </aside>
   </div>
 </template>
+<script>
+export default {
+  auth: false,
+  layout: "blank",
+  data() {
+    return {
+      //state post
+      login: {
+        id:"",
+        username: "",
+        password: "",
+      },
+      //state validation
+      validation: [],
+    };
+  },
+  mounted(){
+    if (localStorage.username){
+      console.log(localStorage.username);
+      this.login.username = localStorage.username
+      this.login.id = localStorage.id
+    }
+  },
+  methods: {
+    //method "store"
+    async store(e) {
+    
+    },
+  },
+};
+</script>

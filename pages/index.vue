@@ -1,12 +1,12 @@
 <template>
   <section class="section">
-    This is public conference page, anyone can access this page
+    This is public page, anyone can access this page
   </section>
 </template>
 
 <script>
 export default {
-  layout: "conference/default",
+  layout: "front/default",
   auth: false,
   components: {},
   data() {

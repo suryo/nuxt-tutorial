@@ -3,7 +3,7 @@
     <b-jumbotron
       class="font-bold"
       header="Welcome To Village Information System"
-      lead="Don't Look Back You're Not Going That Way"
+      lead="MyFramework new looks, new version"
       id="main-header"
       text-variant="white"
     >

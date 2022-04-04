@@ -5,8 +5,7 @@
         <div class="col-12">
           <div class="footer text-center">
             <slot>
-              Powered by the rSchoolToday Athletic Scheduler © 2021 Distributed
-              Website Corp. © Terms of Service © Policies
+              Powered by the Village Information System© 2022  After Tech Multimedia. © Terms of Service © Policies
             </slot>
           </div>
         </div>
