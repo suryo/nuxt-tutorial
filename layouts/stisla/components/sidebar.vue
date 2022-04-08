@@ -9,14 +9,46 @@
       </div>
       <ul class="sidebar-menu">
         <li class="menu-header">Starter</li>
-        <li class="nav-item dropdown">
+         <li class="nav-item dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"
-            ><i class="fas fa-columns"></i> <span>Example</span></a
-          >
+            ><i class="fas fa-columns"></i> <span>Example</span></a>
           <ul class="dropdown-menu">
             <li>
-              <nuxt-link class="nav-link" to="/example/export">
-                export
+              <nuxt-link class="nav-link" to="/Example/button">
+                Action
+              </nuxt-link>
+            </li>
+          </ul>
+        </li>
+
+
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"
+            ><i class="fas fa-columns"></i> <span>Components</span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <nuxt-link class="nav-link" to="/components/button">
+                Button
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="nav-link" to="/components/checkbox">
+                Checkbox
+              </nuxt-link>
+            </li>
+             <li>
+              <nuxt-link class="nav-link" to="/components/inputtext">
+                Input Text
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="nav-link" to="/components/listbox">
+                ListBox
+              </nuxt-link>
+            </li>
+             <li>
+              <nuxt-link class="nav-link" to="/components/radiobutton">
+                Radio Button
               </nuxt-link>
             </li>
           </ul>
