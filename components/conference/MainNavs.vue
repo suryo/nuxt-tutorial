@@ -18,7 +18,7 @@
             <ul class="navbar-nav">
               <li class="nav-item active">
                 <a class="header_button nav-link" href="#">
-                  <span>Conference Calendar</span>
+                  <span>Village Calendar</span>
                 </a>
               </li>
               <li class="nav-item">
@@ -28,7 +28,7 @@
               </li>
               <li class="nav-item">
                 <a class="header_button nav-link" href="#">
-                  <span>Ticket Info</span>
+                  <span>Village Info</span>
                 </a>
               </li>
               <li class="nav-item">
@@ -38,7 +38,7 @@
               </li>
               <li class="nav-item">
                 <NuxtLink class="header_button nav-link" to="/school/1_1"
-                  >Member Schools</NuxtLink
+                  >Member Village</NuxtLink
                 >
               </li>
               <li class="nav-item">
