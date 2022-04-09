@@ -17,9 +17,9 @@
               >
                 <div class="form-group">
                   <label>Username</label>
-                  <input type="text" v-model="username" class="form-control" />
+                  <input type="text" v-model="user.username" class="form-control" />
                   <label>Password</label>
-                  <input type="text" v-model="password" class="form-control" />
+                  <input type="text" v-model="user.password" class="form-control" />
                 </div>
 
                 <div class="form-group">
@@ -55,7 +55,7 @@ export default {
       //state post
       user: {
         username: "",
-        password: "",
+        password: ""
       },
       //state validation
       validation: [],
@@ -74,7 +74,7 @@ export default {
           {
             //data yang dikirim ke server
             username: this.user.username,
-            password: this.user.pasword
+            password: this.user.password
           },
           {
             body: { "content-type": "x-www-form-urlencoded" },
