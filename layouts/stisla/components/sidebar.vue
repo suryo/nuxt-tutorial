@@ -2,7 +2,11 @@
   <div class="main-sidebar">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
-        <nuxt-link to="/dashboard">Nuxt-Tutorial {{this.login.username}} [{{this.login.id}}]</nuxt-link>
+        <nuxt-link to="/dashboard"
+          >Nuxt-Tutorial {{ this.login.username }} [{{
+            this.login.id
+          }}]</nuxt-link
+        >
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
         <a href="index.html">DASHBOARD</a>
@@ -11,12 +15,27 @@
         <li class="menu-header">Starter</li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"
-            ><i class="fas fa-columns"></i> <span>Example</span></a
+            ><i class="fas fa-columns"></i> <span>Master Data</span></a
           >
           <ul class="dropdown-menu">
             <li>
-              <nuxt-link class="nav-link" to="/example/export">
-                export
+              <nuxt-link class="nav-link" to="/user">
+                User
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="nav-link" to="/userrole">
+                User role
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="nav-link" to="/role">
+                Role
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="nav-link" to="/menu">
+                Menu
               </nuxt-link>
             </li>
           </ul>
@@ -61,7 +80,7 @@
             ><i class="far fa-square"></i> <span>desa</span></nuxt-link
           >
         </li>
-                <li>
+        <li>
           <nuxt-link class="nav-link" to="/desa/"
             ><i class="far fa-square"></i> <span>ainur</span></nuxt-link
           >
@@ -83,7 +102,7 @@ export default {
     return {
       //state post
       login: {
-        id:"",
+        id: "",
         username: "",
         password: "",
       },
@@ -91,18 +110,16 @@ export default {
       validation: [],
     };
   },
-  mounted(){
-    if (localStorage.username){
+  mounted() {
+    if (localStorage.username) {
       console.log(localStorage.username);
-      this.login.username = localStorage.username
-      this.login.id = localStorage.id
+      this.login.username = localStorage.username;
+      this.login.id = localStorage.id;
     }
   },
   methods: {
     //method "store"
-    async store(e) {
-    
-    },
+    async store(e) {},
   },
 };
 </script>
