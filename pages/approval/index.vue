@@ -252,10 +252,10 @@ export default {
         { id: 1, label: "suryo" },
         { id: 2, label: "addin" },
         { id: 3, label: "septian" },
-        { id: 3, label: "adhit" },
-        { id: 3, label: "tafsirul" },
-        { id: 3, label: "viko" },
-        { id: 3, label: "septian" },
+        { id: 4, label: "adhit" },
+        { id: 5, label: "tafsirul" },
+        { id: 6, label: "viko" },
+        { id: 7, label: "septian" },
       ],
       form: {
         game_changes: "all",
@@ -280,6 +280,21 @@ export default {
       this.form.email.splice(index, 1);
     },
     handleAddChoice() {
+      let baseAdmin = this.schoolAdmins;
+      let result = [];
+      if (this.form.spesific_mail.length > 0){
+        this.form.spesific_mail.forEach(item => {
+          let test = [];
+          baseAdmin.forEach(data => {
+            if (data.id !== item.reviewer.id){
+              test.push(data)
+            } 
+          })
+          this.schoolAdmins = [...result, test][0]
+        });
+      }
+
+
       this.form.spesific_mail.push({
         action: "",
       activity_type: { id: 0, Type: "Non-Conference" },
