@@ -15,28 +15,43 @@
         <li class="menu-header">Starter</li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"
+            ><i class="fas fa-columns"></i> <span>Auth</span></a
+          >
+          <ul class="dropdown-menu">
+            <li>
+              <nuxt-link class="nav-link" to="/user"> User </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="nav-link" to="/userrole"> User role </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="nav-link" to="/role"> Role </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="nav-link" to="/menu"> Menu </nuxt-link>
+            </li>
+          </ul>
+        </li>
+
+         <li class="nav-item dropdown">
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"
             ><i class="fas fa-columns"></i> <span>Master Data</span></a
           >
           <ul class="dropdown-menu">
             <li>
-              <nuxt-link class="nav-link" to="/user">
-                User
-              </nuxt-link>
+              <nuxt-link class="nav-link" to="/provinsi"> Provinsi </nuxt-link>
             </li>
             <li>
-              <nuxt-link class="nav-link" to="/userrole">
-                User role
-              </nuxt-link>
+              <nuxt-link class="nav-link" to="/kabupaten"> Kabupaten </nuxt-link>
             </li>
             <li>
-              <nuxt-link class="nav-link" to="/role">
-                Role
-              </nuxt-link>
+              <nuxt-link class="nav-link" to="/kota"> Kota </nuxt-link>
             </li>
             <li>
-              <nuxt-link class="nav-link" to="/menu">
-                Menu
-              </nuxt-link>
+              <nuxt-link class="nav-link" to="/kecamatan"> Kecamatan </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="nav-link" to="/desa"> Desa </nuxt-link>
             </li>
           </ul>
         </li>
@@ -55,31 +70,7 @@
             ><i class="far fa-square"></i> <span>Coba2</span></nuxt-link
           >
         </li>
-        <li>
-          <nuxt-link class="nav-link" to="/provinsi/"
-            ><i class="far fa-square"></i> <span>Provinsi</span></nuxt-link
-          >
-        </li>
-        <li>
-          <nuxt-link class="nav-link" to="/kabupaten/"
-            ><i class="far fa-square"></i> <span>Kabupaten</span></nuxt-link
-          >
-        </li>
-        <li>
-          <nuxt-link class="nav-link" to="/kota/"
-            ><i class="far fa-square"></i> <span>Kota</span></nuxt-link
-          >
-        </li>
-        <li>
-          <nuxt-link class="nav-link" to="/kecamatan/"
-            ><i class="far fa-square"></i> <span>Kecamatan</span></nuxt-link
-          >
-        </li>
-        <li>
-          <nuxt-link class="nav-link" to="/desa/"
-            ><i class="far fa-square"></i> <span>desa</span></nuxt-link
-          >
-        </li>
+       
         <li>
           <nuxt-link class="nav-link" to="/desa/"
             ><i class="far fa-square"></i> <span>ainur</span></nuxt-link
