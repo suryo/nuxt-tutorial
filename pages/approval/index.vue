@@ -116,6 +116,7 @@
                   class="searchselect"
                   :clearable="false"
                   v-model="form.spesific_mail[index].activity"
+                  v-on:input="checkrevieweroption"
                   label="name"
                   value="id"
                   :options="activity"
@@ -149,7 +150,7 @@
                   v-model="form.spesific_mail[index].reviewer"
                   label="label"
                   value="id"
-                  :options="schoolAdmins"
+                  :options="checkreviewer"
                 ></v-select>
               </td>
             </tr>
@@ -230,11 +231,11 @@ export default {
       },
       ConfigApproval: [],
       activity: [
-        { id: 1, name: "basket" },
+        { id: 0, name: "basket" },
         { id: 1, name: "renang" },
-        { id: 1, name: "tenis" },
-        { id: 1, name: "footsal" },
-        { id: 1, name: "sepak bola" },
+        { id: 2, name: "tenis" },
+        { id: 3, name: "footsal" },
+        { id: 4, name: "sepak bola" },
       ],
       gender: [
         { id: 0, label: "N/A" },
@@ -243,15 +244,24 @@ export default {
         { id: 3, label: "gak jelas" },
       ],
       level: [
-        { id: 1, labellevel: "dewo" },
+        { id: 0, labellevel: "dewo" },
         { id: 1, labellevel: "sangar" },
-        { id: 1, labellevel: "kroco" },
-        { id: 1, labellevel: "super" }
+        { id: 2, labellevel: "kroco" },
+        { id: 3, labellevel: "super" },
+      ],
+      baseschoolAdmins: [
+        { id: 1, label: "suryo" },
+        { id: 2, label: "addin" },
+        { id: 3, label: "wan abud" },
+        { id: 4, label: "adhit" },
+        { id: 5, label: "tafsirul" },
+        { id: 6, label: "viko" },
+        { id: 7, label: "septian" },
       ],
       schoolAdmins: [
         { id: 1, label: "suryo" },
         { id: 2, label: "addin" },
-        { id: 3, label: "septian" },
+        { id: 3, label: "wan abud" },
         { id: 4, label: "adhit" },
         { id: 5, label: "tafsirul" },
         { id: 6, label: "viko" },
@@ -267,7 +277,263 @@ export default {
       },
     };
   },
+  computed: {
+    // checkreviewer1: function () {
+    //   let baseAdmin = this.schoolAdmins;
+    //   let result = [];
+    //   if (this.form.spesific_mail.length > 0) {
+    //     this.form.spesific_mail.forEach((item) => {
+    //       let test = [];
+    //       baseAdmin.forEach((data) => {
+    //         if (data.id !== item.reviewer.id) {
+    //           test.push(data);
+    //         }
+    //       });
+    //       this.schoolAdmins = [...result, test][0];
+    //     });
+    //   }
+    //   return this.schoolAdmins;
+    // },
+    checkreviewer: function () {
+      var filterme = [];
+      var filtered = [];
+
+      let baseAdmin = this.baseschoolAdmins;
+      let result = [];
+      let l = this.form.spesific_mail.length;
+      if (l === 0) {
+        console.log("awalnya");
+      } else if (l === 1) {
+        console.log("ada satu data computed");
+        filterme.push(this.form.spesific_mail[0].reviewer.id);
+        // let test = [];
+        // baseAdmin.forEach((data) => {
+        //   if (data.id !== this.form.spesific_mail[0].reviewer.id) {
+        //     test.push(data);
+        //   }
+        // });
+        // this.schoolAdmins = [...result, test][0];
+        console.log(this.schoolAdmins[0]);
+        //this.form.spesific_mail[0].reviewer =  this.schoolAdmins[0];
+      } else {
+        console.log(
+          "ada lebih dari satu data================================================="
+        );
+        l = this.form.spesific_mail.length;
+        console.log("panjang " + l);
+
+        for (let i = 0; i < l; i++) {
+          for (let x = i + 1; x < l; x++) {
+            if (x !== i) {
+              console.log(i + "," + x + " bandingkan ");
+
+              if (
+                this.form.spesific_mail[x].activity.id ===
+                  this.form.spesific_mail[i].activity.id &&
+                this.form.spesific_mail[x].gender.id ===
+                  this.form.spesific_mail[i].gender.id &&
+                this.form.spesific_mail[x].level.id ===
+                  this.form.spesific_mail[i].level.id
+              ) {
+                console.log("agl sama gaes computed");
+                //  filterme.push(this.form.spesific_mail[x].reviewer.id);
+                filterme = filterme.concat(
+                  this.form.spesific_mail[i].reviewer.id
+                );
+                // let test = [];
+                // baseAdmin.forEach((data) => {
+                //   if (data.id !== this.form.spesific_mail[i].reviewer.id) {
+                //     test.push(data);
+                //   }
+                // });
+                // this.schoolAdmins = [...result, test][0];
+                if (
+                  this.form.spesific_mail[i].reviewer.id ===
+                  this.form.spesific_mail[x].reviewer.id
+                ) {
+                  console.log("reviewernya sama gaes computed");
+                  let test = [];
+                  baseAdmin.forEach((data) => {
+                    if (data.id !== this.form.spesific_mail[x].reviewer.id) {
+                      test.push(data);
+                    }
+                  });
+
+                  filterme = filterme.concat(
+                    this.form.spesific_mail[x].reviewer.id
+                  );
+                  console.log(
+                    "push id " + this.form.spesific_mail[x].reviewer.id
+                  );
+
+                  filtered = this.baseschoolAdmins.filter(
+                    (i) => !filterme.includes(i.id)
+                  );
+                  this.schoolAdmins = filtered;
+                  // console.log("school admin sebelum diisi test");
+                  console.log("school admin");
+                  console.log(this.schoolAdmins);
+                  // this.schoolAdmins = [...result, test][0];
+                  // console.log("school admin sesudah diisi test");
+                  console.log(this.schoolAdmins);
+                  this.form.spesific_mail[x].reviewer = this.schoolAdmins[0];
+                } else {
+                  console.log("reviewernya beda gaes computed");
+                }
+              } else {
+                console.log("agl tidak sama gaes computed ");
+                console.log("isi school admin ");
+                console.log(this.schoolAdmins);
+                console.log("filter ");
+                console.log(filterme);
+                console.log("isi reviwer ke i ");
+                console.log(this.form.spesific_mail[i].reviewer.id);
+                let id = this.form.spesific_mail[i].reviewer.id;
+                var revertfilter = filterme.filter(function (value, index, arr) {
+                  return value !== id;
+                });
+                filterme =  revertfilter;
+                // console.log("setelah di revert, isi filter ");
+                console.log(filterme);
+
+                 filtered = this.baseschoolAdmins.filter(
+                    (i) => !filterme.includes(i.id)
+                  );
+                  this.schoolAdmins = filtered;
+                // baseAdmin.forEach((data) => {
+                //   if (data.id === this.form.spesific_mail[i].reviewer.id) {
+                //     let index = baseAdmin.findIndex(
+                //       (y) => y.id === this.form.spesific_mail[i].reviewer.id
+                //     );
+                //     console.log(
+                //       "cari index " +
+                //         this.form.spesific_mail[i].reviewer.id +
+                //         " nama " +
+                //         this.form.spesific_mail[i].reviewer.id
+                //     );
+                //     console.log("hasil index " + index);
+                //     if (index === 0) {
+                //       console.log("kembalikan");
+                //       console.log(data);
+                //       this.schoolAdmins.push(data);
+                //     }
+                //   }
+                // });
+
+                //this.schoolAdmins
+              }
+
+              // if (
+              //   this.form.spesific_mail[x].activity_type.id ===
+              //     this.form.spesific_mail[i].activity_type.id &&
+              //   this.form.spesific_mail[x].activity.id ===
+              //     this.form.spesific_mail[i].activity.id &&
+              //   this.form.spesific_mail[x].gender.id ===
+              //     this.form.spesific_mail[i].gender.id &&
+              //   this.form.spesific_mail[x].level.id ===
+              //     this.form.spesific_mail[i].level.id
+              // ) {
+              //   console.log("kembar gaes");
+              //   console.log(this.form.spesific_mail[x].reviewer);
+              //   let index = this.schoolAdminsOptions.findIndex(
+              //     (y) => y.id === this.form.spesific_mail[x].reviewer.id
+              //   );
+              //   console.log("ini index : " + index);
+              //   this.schoolAdminsOptions.splice(index, 1);
+
+              // }
+            }
+          }
+        }
+      }
+      console.log("isi filterme");
+      console.log(filterme);
+      filtered = this.schoolAdmins.filter((i) => !filterme.includes(i.id));
+      console.log("isi filtered");
+      console.log(filtered);
+      baseAdmin = filtered;
+      this.schoolAdmins = baseAdmin;
+      console.log("baseadmin");
+      console.log(baseAdmin);
+      return this.schoolAdmins;
+    },
+  },
+
   methods: {
+    checkrevieweroption() {
+      let baseAdmin = this.schoolAdmins;
+      let result = [];
+      let l = this.form.spesific_mail.length;
+      if (l === 0) {
+        console.log("awalnya");
+      } else if (l === 1) {
+        console.log("ada satu data method");
+        let test = [];
+        baseAdmin.forEach((data) => {
+          if (data.id !== this.form.spesific_mail[0].reviewer.id) {
+            test.push(data);
+          }
+        });
+        this.schoolAdmins = [...result, test][0];
+        console.log(this.schoolAdmins[0]);
+        this.form.spesific_mail[0].reviewer = this.schoolAdmins[0];
+      } else {
+        console.log("ada lebih dari satu data");
+        l = this.form.spesific_mail.length;
+        console.log("panjang " + l);
+
+        for (let i = 0; i < l; i++) {
+          for (let x = l - 1; x > i; x--) {
+            if (x !== i) {
+              console.log(i + "," + x + " bandingkan ");
+
+              if (
+                this.form.spesific_mail[x].activity.id ===
+                  this.form.spesific_mail[i].activity.id &&
+                this.form.spesific_mail[x].gender.id ===
+                  this.form.spesific_mail[i].gender.id &&
+                this.form.spesific_mail[x].level.id ===
+                  this.form.spesific_mail[i].level.id
+              ) {
+                console.log("agl sama gaes method");
+                let test = [];
+                baseAdmin.forEach((data) => {
+                  if (data.id !== this.form.spesific_mail[i].reviewer.id) {
+                    test.push(data);
+                  }
+                });
+                this.schoolAdmins = [...result, test][0];
+              } else {
+                console.log("agl tidak sama gaes method");
+              }
+
+              // if (
+              //   this.form.spesific_mail[x].activity_type.id ===
+              //     this.form.spesific_mail[i].activity_type.id &&
+              //   this.form.spesific_mail[x].activity.id ===
+              //     this.form.spesific_mail[i].activity.id &&
+              //   this.form.spesific_mail[x].gender.id ===
+              //     this.form.spesific_mail[i].gender.id &&
+              //   this.form.spesific_mail[x].level.id ===
+              //     this.form.spesific_mail[i].level.id
+              // ) {
+              //   console.log("kembar gaes");
+              //   console.log(this.form.spesific_mail[x].reviewer);
+              //   let index = this.schoolAdminsOptions.findIndex(
+              //     (y) => y.id === this.form.spesific_mail[x].reviewer.id
+              //   );
+              //   console.log("ini index : " + index);
+              //   this.schoolAdminsOptions.splice(index, 1);
+
+              // }
+            }
+          }
+        }
+      }
+
+      return this.schoolAdmins;
+    },
+
     addEmail(event) {
       event.preventDefault();
       var val = event.target.value.trim();
@@ -279,29 +545,49 @@ export default {
     removeEmail(index) {
       this.form.email.splice(index, 1);
     },
-    handleAddChoice() {
-      let baseAdmin = this.schoolAdmins;
-      let result = [];
-      if (this.form.spesific_mail.length > 0){
-        this.form.spesific_mail.forEach(item => {
-          let test = [];
-          baseAdmin.forEach(data => {
-            if (data.id !== item.reviewer.id){
-              test.push(data)
-            } 
-          })
-          this.schoolAdmins = [...result, test][0]
-        });
+    union_arrays(x, y) {
+      var obj = {};
+      for (var i = x.length - 1; i >= 0; --i) obj[x[i]] = x[i];
+      for (var i = y.length - 1; i >= 0; --i) obj[y[i]] = y[i];
+      var res = [];
+      for (var k in obj) {
+        if (obj.hasOwnProperty(k))
+          // <-- optional
+          res.push(obj[k]);
       }
+      return res;
+    },
+    handleAddChoice() {
+      let isi = [3];
 
-
+      // var arr = this.schoolAdmins.filter(i => !filterme.includes(i.id))
+      var potong = isi.filter(function (value, index, arr) {
+        return value !== 3;
+      });
+      console.log("potong");
+      console.log(potong);
+      // this.checkrevieweroption;
+      // let baseAdmin = this.baseschoolAdmins;
+      // let result = [];
+      // if (this.form.spesific_mail.length === 1) {
+      //   this.form.spesific_mail.forEach((item) => {
+      //     let test = [];
+      //     baseAdmin.forEach((data) => {
+      //       if (data.id !== item.reviewer.id) {
+      //         test.push(data);
+      //       }
+      //     });
+      //     this.schoolAdmins = [...result, test][0];
+      //   });
+      // }
+      console.log("buat data/////////////////////////////////////////////////");
       this.form.spesific_mail.push({
         action: "",
-      activity_type: { id: 0, Type: "Non-Conference" },
-      activity: this.activity[0],
-      gender: this.gender[0],
-      level: this.level[0],
-      reviewer: this.schoolAdmins[0],
+        activity_type: { id: 0, Type: "Non-Conference" },
+        activity: this.activity[0],
+        gender: this.gender[0],
+        level: this.level[0],
+        reviewer: this.schoolAdmins[0],
       });
     },
     handleRemoveChoice(index) {
