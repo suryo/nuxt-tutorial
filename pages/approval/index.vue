@@ -305,7 +305,7 @@ export default {
         console.log("awalnya");
       } else if (l === 1) {
         console.log("ada satu data computed");
-        filterme.push(this.form.spesific_mail[0].reviewer.id);
+        // filterme.push(this.form.spesific_mail[0].reviewer.id);
         // let test = [];
         // baseAdmin.forEach((data) => {
         //   if (data.id !== this.form.spesific_mail[0].reviewer.id) {
@@ -468,14 +468,14 @@ export default {
         console.log("awalnya");
       } else if (l === 1) {
         console.log("ada satu data method");
-        let test = [];
-        baseAdmin.forEach((data) => {
-          if (data.id !== this.form.spesific_mail[0].reviewer.id) {
-            test.push(data);
-          }
-        });
-        this.schoolAdmins = [...result, test][0];
-        console.log(this.schoolAdmins[0]);
+        // let test = [];
+        // baseAdmin.forEach((data) => {
+        //   if (data.id !== this.form.spesific_mail[0].reviewer.id) {
+        //     test.push(data);
+        //   }
+        // });
+        // this.schoolAdmins = [...result, test][0];
+        // console.log(this.schoolAdmins[0]);
         this.form.spesific_mail[0].reviewer = this.schoolAdmins[0];
       } else {
         console.log("ada lebih dari satu data");
