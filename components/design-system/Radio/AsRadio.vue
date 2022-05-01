@@ -162,7 +162,7 @@ fieldset.uxpin.vertical {
   left: 0;
   width: 16px;
   height: 16px;
-  border: 1px solid var(--color-blue4);
+  border: 1px solid coral;
   background-color: var(--color-white);
   background-size: cover;
   border-radius: 50%;
@@ -174,7 +174,7 @@ fieldset.uxpin.vertical {
 
 .radio-container input:checked ~ .shade {
   /* When the radio button is checked */
-  background-color: var(--color-blue4);
+  background-color: coral;
 }
 .shade:after {
   /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -231,7 +231,7 @@ fieldset.uxpin.vertical {
   margin: auto;
   width: 16px;
   height: 16px;
-  border: 1px solid var(--color-blue4);
+  border: 1px solid coral;
   border-radius: 100%;
   background: var(--color-white);
 }
@@ -261,7 +261,7 @@ fieldset.uxpin.vertical {
   transform: scale(1);
 }
 .radio-wrapper .styled-radio:checked + label:before {
-  background-color: var(--color-blue4);
+  background-color: coral;
 }
 fieldset.uxpin.vertical .radio-wrapper,
 fieldset.uxpin.vertical .radio-title {
