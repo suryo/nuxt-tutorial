@@ -1,38 +1,20 @@
 <template>
   <section class="section">
-    <div class="container mt-8">
+    <div class>
       <div class="row">
-        <div
-          class="
-            col-12 col-sm-8
+        <div class="col-12 col-sm-8
             offset-sm-2
             col-md-6
             offset-md-3
             col-lg-6
             offset-lg-3
             col-xl-4
-            offset-xl-4
-          "
-        >
-          <div class="login-brand">
-            <!-- <img
-              src="#"
-              alt="logo"
-              width="100"
-              class="shadow-light rounded-circle"
-            /> -->
-          </div>
-
-          <div class="card card-primary">
-            <div class="card-header"><h4>Login</h4></div>
-
+            offset-xl-4">
+          <div class="card">
+            <div class="card-header">
+              <h4>Login</h4>
+            </div>
             <div class="card-body">
-              <!-- <form
-                method="POST"
-                action="/dashboard"
-                class="needs-validation"
-                novalidate=""
-              > -->
               <form
                 @submit="store"
                 method="POST"
@@ -40,7 +22,13 @@
                 class="needs-validation"
                 novalidate=""
               >
-                <div class="form-group">
+                <!-- <div class="form-group">
+                  <label>Provinsi</label>
+                  <input type="text" v-model="provinsi.provinsi" class="form-control" />
+                </div> -->
+
+
+                  <div class="form-group">
                   <label for="email">Username</label>
                   <input
                     id="username"
@@ -78,38 +66,21 @@
                 </div>
 
                 <div class="form-group">
-                  <div class="custom-control custom-checkbox">
-                    <input
-                      type="checkbox"
-                      name="remember"
-                      class="custom-control-input"
-                      tabindex="3"
-                      id="remember-me"
-                    />
-                    <!-- <label class="custom-control-label" for="remember-me"
-                      >Remember Me</label
-                    > -->
+                  <label
+                    class="
+                      col-form-label
+                      text-md-right
+                      col-12 col-md-3 col-lg-3
+                    "
+                  ></label>
+                  <div class="col-sm-12 col-md-7">
+                    <button type="submit" class="btn btn-primary">
+                      Simpan
+                    </button>
                   </div>
-                </div>
-
-                <div class="form-group">
-                  <button
-                    type="submit"
-                    class="btn btn-primary btn-lg btn-block"
-                    tabindex="4"
-                  >
-                    Login
-                  </button>
-                   <a href="..">back</a>
                 </div>
               </form>
             </div>
-          </div>
-          <div class="mt-5 text-muted text-center">
-            Don't have an account?
-            <a href="auth-register.html">WhatsApp to +62856 4922 4822</a>
-
-            <div class="simple-footer">Copyright &copy; SuryoAtmojo 2022</div>
           </div>
         </div>
       </div>
@@ -124,7 +95,14 @@ export default {
   layout: "blank",
   data() {
     return {
+
+       provinsi: {
+        provinsi: "",
+      },
       //state post
+      username : 'suryo',
+      password : '123456',
+      
       login: {
         username: "",
         password: "",
@@ -134,64 +112,35 @@ export default {
     };
   },
   methods: {
-    //method "store"
     async store(e) {
-      e.preventDefault();
-      username = this.login.username;
-      password = this.login.password;
-      console.log(username);
-      console.log(password);
-      let endPoint = `/api/userlogin/?username=${username}&pwd=${password}`;
-      console.log(endPoint);
-      await this.$axios
-        .$get(endPoint)
-        .then((res) => {
-          console.log(res);
-          if (res.data.status == "ok") {
-            // console.log(res.data.status);
-            localStorage.username = username;
-            localStorage.id = res.data.id;
+     e.preventDefault();
+ this.username = this.login.username;
+      this.password = this.login.password;
+       await this.$axios
+            .get(`/api/userlogin?username=${this.username}&pwd=${this.password}`)
+      .then((response) => {
+        console.log("masuk");
+        this.posts = response.data;
+        console.log(this.posts.message);
+                  if (response.data.message == "success") {
+            console.log(response.data.data);
+            console.log(this.username) 
+            console.log(response.data.data[0].id) 
+            console.log(response.data.data[0].no_pendaftaran) 
+            localStorage.username = this.username;
+            localStorage.id = response.data.data[0].id;
+            localStorage.no_pendaftaran = response.data.data[0].no_pendaftaran;
             
             this.$router.push({
               name: "dashboard",
             });
           }
-        })
-        .catch(function (err) {
-          console.log(err);
-        });
-      //  await this.$axios
-      //   .get(`/api/userlogin/?username?username=${username}&pwd=${password}`, {
-      //     //data yang dikirim ke server
-      //     provinsi: this.provinsi.provinsi,
-      //   })
-      //   .then(() => {
-      //     //redirect ke route "post"
-      //     this.$router.push({
-      //       name: "provinsi",
-      //     });
-      //   })
-      //   .catch((error) => {
-      //     //assign validation
-      //     this.validation = error.response.data;
-      //   });
+      })
+      .catch((error) => {
+        console.log("error");
+      });
 
-      //send data ke Rest API
-      // await this.$axios
-      //   .post("/api/provinsi", {
-      //     //data yang dikirim ke server
-      //     provinsi: this.provinsi.provinsi,
-      //   })
-      //   .then(() => {
-      //     //redirect ke route "post"
-      //     this.$router.push({
-      //       name: "provinsi",
-      //     });
-      //   })
-      //   .catch((error) => {
-      //     //assign validation
-      //     this.validation = error.response.data;
-      //   });
+
     },
   },
 };

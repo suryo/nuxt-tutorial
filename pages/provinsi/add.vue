@@ -64,22 +64,35 @@ export default {
     async store(e) {
       e.preventDefault();
 
-      //send data ke Rest API
-      await this.$axios
-        .post("/api/provinsi", {
-          //data yang dikirim ke server
-          provinsi: this.provinsi.provinsi,
-        })
-        .then(() => {
-          //redirect ke route "post"
-          this.$router.push({
-            name: "provinsi",
-          });
-        })
-        .catch((error) => {
-          //assign validation
-          this.validation = error.response.data;
-        });
+       await this.$axios
+            .get("/api/provinsi")
+      .then((response) => {
+        console.log("masuk");
+        //assign response ke state "posts"
+        this.posts = response.data.data;
+        console.log(this.posts);
+      })
+      .catch((error) => {
+        console.log("error");
+        // console.log(error.response.data);
+      });
+
+      // //send data ke Rest API
+      // await this.$axios
+      //   .post("/api/provinsi", {
+      //     //data yang dikirim ke server
+      //     provinsi: this.provinsi.provinsi,
+      //   })
+      //   .then(() => {
+      //     //redirect ke route "post"
+      //     this.$router.push({
+      //       name: "provinsi",
+      //     });
+      //   })
+      //   .catch((error) => {
+      //     //assign validation
+      //     this.validation = error.response.data;
+      //   });
     },
   },
 };
